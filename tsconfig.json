@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"lib": ["ES6"],
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"module": "commonjs",
+		"rootDir": "./src",
+		"typeRoots": [
+			"./node_modules/@types",
+			"./src/@types"
+		],
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"outDir": "./dist",
+		"removeComments": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": false,
+		"skipLibCheck": true,
+		"baseUrl": ".",
+		"paths": {
+			"@controllers/*": ["./src/controllers/*"],
+			"@models/*": ["./src/models/*"],
+			"@database/*": ["./src/database/*"],
+			"@services/*": ["./src/services/*"],
+			"@middlewares/*": ["./src/middlewares/*"]
+		}
+	},
+	"include": [
+		"src/**/*", "__tests__"
+	]
+}
