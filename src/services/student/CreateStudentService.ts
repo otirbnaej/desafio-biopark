@@ -12,6 +12,12 @@ class CreateStudentService {
 		try {
 			if (!name) throw `Student must have a name.`;
 			if (!email) throw `Student must have an email.`;
+			const studentAlreadyExists = await prismaClient.student.findUnique({
+				where: {
+					email,
+				},
+			});
+			if (studentAlreadyExists) throw `Student's email already exists.`;
 			if (!birthDate) throw `Student must have a birth date`;
 
 			// Validate Date
