@@ -1,4 +1,5 @@
 import prismaClient from '../../prisma';
+import validator from 'validator';
 
 interface IStudentRequest {
 	name: string;
@@ -12,6 +13,8 @@ class CreateStudentService {
 		try {
 			if (!name) throw `Student must have a name.`;
 			if (!email) throw `Student must have an email.`;
+			if (!validator.isEmail(email)) throw `Invalid email.`;
+
 			const studentAlreadyExists = await prismaClient.student.findUnique({
 				where: {
 					email,
@@ -22,6 +25,8 @@ class CreateStudentService {
 
 			// Validate Date
 			const [day, month, year] = birthDate.split('-');
+			if (!validator.isDate(`${year}-${month}-${day}`))
+				throw `Invalid birthdate`;
 			console.log(day, month, year);
 
 			const date = new Date(`${year}-${month}-${day}`);
