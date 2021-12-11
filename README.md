@@ -26,6 +26,8 @@ A Rest API where the user can create and list students.
 
 ## 📄 How to use
 
+- You will need <a href="https://nodejs.org/en/blog/release/v16.13.0/">node v16.13.0</a> and <a href="https://www.postgresql.org/download/">postgreSQL v14.1</a>
+
 - Install the dependencies:
 
 ```bash
@@ -62,7 +64,7 @@ Body example:
 {
 	"name": "joao",
 	"email": "joao@gmail.com",
-	"cpf": "XXX.XXX.XXX-XX",
+	"cpf": "012.345.678-90",
 	"birthDate": "DD-MM-YYYY"
 }
 ```
