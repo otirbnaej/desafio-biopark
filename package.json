@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"repository": "git@github.com:otirbnaej/desafio-biopark.git",
 	"author": "Jean Brito <otirbnaej@hotmail.com>",
-	"license": "MIT",
+	"license": "GNU GPL V2",
 	"scripts": {
 		"dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
 		"build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
