@@ -37,6 +37,12 @@ class CreateStudentService {
 			// Validate CPF
 			if (!cpf || validator.isEmpty(cpf)) throw 'Student must have a CPF';
 			if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf)) throw 'Invalid CPF format';
+			const cpfAlreadyExists = await prismaClient.student.findUnique({
+				where: {
+					cpf,
+				},
+			});
+			if (cpfAlreadyExists) throw `Student's CPF already exists.`;
 			const newCpf = new CPF(cpf);
 			const cpfIsValid = newCpf.validate();
 			if (!cpfIsValid) throw 'Invalid CPF';
