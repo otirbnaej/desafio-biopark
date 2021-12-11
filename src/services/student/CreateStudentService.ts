@@ -33,6 +33,7 @@ class CreateStudentService {
 			if (!validator.isDate(`${year}-${month}-${day}`))
 				throw `Invalid birthdate`;
 			const date = new Date(`${year}-${month}-${day}`);
+			if (date >= new Date()) throw `Invalid Date`;
 
 			// Validate CPF
 			if (!cpf || validator.isEmpty(cpf)) throw 'Student must have a CPF';
