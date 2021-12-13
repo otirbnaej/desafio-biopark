@@ -45,7 +45,7 @@ Ex.: 'postgresql://joao:mypassword@localhost:5432/biopark?schema=public'
 <br>
 
 
-- Generate Prisma migrations
+- Generate Prisma migrations:
 
 ```bash
 $ yarn prisma migrate dev
@@ -53,7 +53,7 @@ $ yarn prisma migrate dev
 
 <br>
 
-- Start application
+- Start application:
 
 ```bash
 $ yarn dev
